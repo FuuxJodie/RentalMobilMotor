@@ -1,0 +1,131 @@
+.payment-layout {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 18px;
+    align-items: start;
+}
+
+.payment-method-panel,
+.payment-summary-panel {
+    padding: 22px;
+}
+
+.pay-method {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface-soft);
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease, background .28s ease;
+}
+
+.pay-method:hover,
+.pay-method:has(input:checked) {
+    transform: translateY(-5px);
+    border-color: color-mix(in srgb, var(--primary) 56%, var(--border));
+    background: color-mix(in srgb, var(--primary) 10%, var(--surface));
+    box-shadow: 0 18px 44px color-mix(in srgb, var(--primary) 14%, transparent);
+}
+
+.pay-method input {
+    margin-top: 5px;
+    accent-color: var(--primary);
+}
+
+.pay-method strong {
+    display: block;
+    margin-bottom: 3px;
+}
+
+.pay-method span,
+.payment-info-box p,
+.payment-car-card p {
+    color: var(--text-soft);
+}
+
+.payment-info-box {
+    margin: 18px 0;
+    padding: 16px;
+    border-radius: 18px;
+    border: 1px dashed color-mix(in srgb, var(--primary) 42%, var(--border));
+    background: color-mix(in srgb, var(--primary) 8%, var(--surface));
+}
+
+.payment-car-card {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 14px;
+    align-items: center;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface-soft);
+    margin-bottom: 14px;
+}
+
+.payment-car-card img {
+    width: 130px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.eyebrow.small {
+    font-size: .72rem;
+    padding: 5px 9px;
+    margin-bottom: 8px;
+}
+
+.payment-summary-list {
+    display: grid;
+    gap: 10px;
+}
+
+.payment-row {
+    display: grid;
+    grid-template-columns: minmax(110px, .8fr) 1.2fr;
+    gap: 14px;
+    align-items: start;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.payment-row span {
+    color: var(--text-soft);
+}
+
+.payment-row strong {
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.payment-row.total {
+    border-bottom: 0;
+    font-size: 1.05rem;
+}
+
+.payment-row.total strong {
+    color: var(--primary);
+    font-size: 1.22rem;
+}
+
+@media (max-width: 900px) {
+    .payment-layout,
+    .payment-car-card,
+    .payment-row {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-car-card img {
+        width: 100%;
+        height: 190px;
+    }
+
+    .payment-row strong {
+        text-align: left;
+    }
+}

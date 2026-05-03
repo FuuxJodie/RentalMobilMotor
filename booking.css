@@ -1,0 +1,115 @@
+.booking-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 18px;
+    align-items: start;
+}
+
+.payment-panel,
+.summary-panel {
+    padding: 22px;
+}
+
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.method-card {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 14px;
+    cursor: pointer;
+    background: var(--surface-soft);
+}
+
+.method-card input {
+    margin-right: 8px;
+}
+
+.summary-panel {
+    position: sticky;
+    top: 96px;
+}
+
+.summary-box-item {
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    margin-bottom: 12px;
+    background: var(--surface-soft);
+}
+
+.summary-box-item h4 {
+    margin-bottom: 6px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: var(--text-soft);
+    margin-bottom: 8px;
+}
+
+.summary-total {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.confirmation-box {
+    margin-top: 18px;
+    padding: 18px;
+    border-radius: 18px;
+    background: color-mix(in srgb, var(--success) 12%, var(--surface));
+    color: var(--text);
+}
+
+@media (max-width: 920px) {
+    .booking-layout,
+    .method-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-panel {
+        position: static;
+    }
+}
+
+
+/* Tampilan awal select booking saat masih “Pilih paket / Pilih durasi” */
+#packageSelect:invalid,
+#rentalDuration:invalid {
+    color: var(--text-soft);
+}
+
+#packageSelect,
+#rentalDuration {
+    cursor: pointer;
+}
+
+.booking-placeholder {
+    padding: 18px;
+    border: 1px dashed color-mix(in srgb, var(--primary) 34%, var(--border));
+    border-radius: 18px;
+    background: color-mix(in srgb, var(--primary) 8%, var(--surface));
+    color: var(--text-soft);
+}
+
+.booking-placeholder strong {
+    display: block;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.payment-note-box {
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: 18px;
+    border: 1px dashed color-mix(in srgb, var(--primary) 38%, var(--border));
+    background: color-mix(in srgb, var(--primary) 8%, var(--surface));
+    color: var(--text-soft);
+}

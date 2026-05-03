@@ -1,0 +1,219 @@
+.hero-home {
+    padding: 28px 0 24px;
+}
+
+.hero-wrap {
+    display: grid;
+    gap: 18px;
+}
+
+.hero-banner {
+    position: relative;
+    min-height: 360px;
+    border-radius: 28px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--card-shadow);
+}
+
+.hero-banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(3, 8, 20, 0.16), rgba(3, 8, 20, 0.48));
+}
+
+.hero-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-floating-card {
+    position: absolute;
+    z-index: 2;
+    left: 36px;
+    bottom: 36px;
+    background: color-mix(in srgb, var(--surface) 88%, transparent);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+    border-radius: 22px;
+    padding: 22px 24px;
+    max-width: 460px;
+}
+
+.hero-floating-card h1 {
+    font-size: clamp(2rem, 3vw, 2.6rem);
+    line-height: 1.08;
+    margin-bottom: 10px;
+    letter-spacing: -0.03em;
+}
+
+.hero-floating-card p {
+    color: var(--text-soft);
+}
+
+.hero-search-panel {
+    padding: 16px;
+}
+
+.search-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr auto;
+    gap: 12px;
+    align-items: end;
+}
+
+.search-btn {
+    min-width: 120px;
+}
+
+.listing-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 18px;
+    align-items: start;
+}
+
+.filter-sidebar {
+    padding: 22px;
+    position: sticky;
+    top: 94px;
+}
+
+.filter-group {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.filter-group:last-child {
+    border-bottom: 0;
+}
+
+.filter-group h4 {
+    margin-bottom: 10px;
+}
+
+.filter-group label {
+    display: flex;
+    gap: 8px;
+    color: var(--text-soft);
+    margin-bottom: 8px;
+}
+
+.listing-main {
+    display: grid;
+    gap: 18px;
+}
+
+.section-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.sort-info {
+    color: var(--text-soft);
+    font-size: 0.94rem;
+}
+
+.testimonial-strip {
+    padding: 28px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 18px;
+    align-items: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.stats-grid article {
+    background: var(--surface-soft);
+    border-radius: 18px;
+    padding: 18px;
+    text-align: center;
+}
+
+.stats-grid strong {
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+    color: var(--primary);
+}
+
+@media (max-width: 980px) {
+    .search-grid,
+    .listing-layout,
+    .testimonial-strip,
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-sidebar {
+        position: static;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-floating-card {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+        max-width: none;
+    }
+}
+
+/* Animasi fade in untuk gambar utama saat halaman awal dibuka */
+@keyframes heroImageFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.06);
+        filter: blur(10px) brightness(0.82);
+    }
+
+    60% {
+        opacity: 1;
+        filter: blur(2px) brightness(0.96);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0) brightness(1);
+    }
+}
+
+.hero-banner img {
+    opacity: 0;
+    animation: heroImageFadeIn 1.15s cubic-bezier(.22, 1, .36, 1) 0.12s forwards;
+    will-change: opacity, transform, filter;
+}
+
+.hero-banner::after {
+    opacity: 0;
+    animation: heroOverlayFadeIn .9s ease .55s forwards;
+}
+
+@keyframes heroOverlayFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero-floating-card {
+    opacity: 0;
+    transform: translateY(18px) scale(.98);
+    animation: heroCardFadeUp .8s cubic-bezier(.22, 1, .36, 1) .65s forwards;
+}
+
+@keyframes heroCardFadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
