@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Customer Rating - Nexora Mobility</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/customer.css">
+</head>
+<body data-page="customer">
+    <div id="navbar"></div>
+
+    <main>
+        <section class="customer-hero section-space">
+            <div class="container customer-hero-grid">
+                <div class="page-heading compact">
+                    <span class="eyebrow">Apa Kata Mereka?</span>
+                    <h1>Rating customer Nexora Mobility</h1>
+                    <p>Halaman ini menampilkan ulasan pelanggan seperti desain Figma, lengkap dengan mode light dan dark.</p>
+                </div>
+                <aside class="rating-summary card-surface">
+                    <div class="rating-number" id="averageRating">5.0</div>
+                    <div class="star-row big">★★★★★</div>
+                    <p id="reviewCount">3 ulasan pelanggan</p>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section-space customer-content">
+            <div class="container customer-layout">
+                <section>
+                    <div class="section-header-row">
+                        <div>
+                            <span class="eyebrow">Testimoni Pelanggan</span>
+                            <h2>Pengalaman pengguna setelah memakai layanan</h2>
+                        </div>
+                    </div>
+                    <div id="customerReviews" class="rating-grid"></div>
+                </section>
+
+                <aside class="review-form card-surface">
+                    <span class="eyebrow">Tambah Ulasan</span>
+                    <h2>Beri rating layanan</h2>
+                    <p class="muted">Ulasan yang dikirim akan tersimpan sementara di browser melalui localStorage.</p>
+                    <div id="customerAlert" class="alert"></div>
+                    <form id="customerForm">
+                        <input type="hidden" id="ratingValue" value="5">
+                        <div class="input-group">
+                            <label for="reviewName">Nama Customer</label>
+                            <input id="reviewName" class="input-control" type="text" placeholder="Masukkan nama Anda">
+                        </div>
+                        <div class="input-group">
+                            <label for="reviewRole">Keterangan</label>
+                            <input id="reviewRole" class="input-control" type="text" placeholder="Contoh: Mahasiswa / Pelanggan harian">
+                        </div>
+                        <div class="input-group">
+                            <label>Rating</label>
+                            <div class="rating-choice">
+                                <button type="button" data-rating="1">1</button>
+                                <button type="button" data-rating="2">2</button>
+                                <button type="button" data-rating="3">3</button>
+                                <button type="button" data-rating="4">4</button>
+                                <button type="button" data-rating="5" class="active">5</button>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="reviewMessage">Ulasan</label>
+                            <textarea id="reviewMessage" class="input-control" rows="5" placeholder="Tulis pengalaman Anda menggunakan layanan Nexora Mobility"></textarea>
+                        </div>
+                        <button class="btn btn-accent btn-block" type="submit">Kirim Rating</button>
+                    </form>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+    <script src="script.js"></script>
+</body>
+</html>

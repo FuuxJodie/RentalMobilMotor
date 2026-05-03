@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Hubungi Kami - Nexora Mobility</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body data-page="contact">
+    <div id="navbar"></div>
+
+    <main class="contact-page section-space">
+        <div class="container">
+            <div class="contact-title page-heading compact">
+                <h1>Hubungi Kami</h1>
+                <p>Konsultasikan kebutuhan rental mobil dan motor Anda melalui formulir berikut.</p>
+            </div>
+
+            <section class="contact-layout">
+                <aside class="contact-card">
+                    <div class="circle-blur one"></div>
+                    <div class="circle-blur two"></div>
+                    <h2>Nexora <span>Mobility</span></h2>
+                    <p>Silakan hubungi kami atau kunjungi kantor kami untuk konsultasi langsung mengenai paket rental mobil dan motor.</p>
+                    <div class="yellow-line"></div>
+
+                    <div class="contact-info-list">
+                        <div>
+                            <h3>ALAMAT:</h3>
+                            <p>Jl. Demang Lebar Daun No. 67, Palembang, Sumatera Selatan, Indonesia</p>
+                        </div>
+                        <div>
+                            <h3>WHATSAPP:</h3>
+                            <p>+62 812-3456-7890</p>
+                        </div>
+                        <div>
+                            <h3>EMAIL:</h3>
+                            <p>hello@nexoramobility.id</p>
+                        </div>
+                        <div>
+                            <h3>JAM KERJA:</h3>
+                            <p>Senin - Sabtu: 08.00 - 20.00 WIB</p>
+                        </div>
+                    </div>
+                </aside>
+
+                <section class="contact-form-wrap card-surface">
+                    <h2>Kirim Pesan</h2>
+                    <p class="muted">Isi data di bawah ini. Pesan akan disimpan sebagai simulasi database pada localStorage.</p>
+                    <div id="contactAlert" class="alert"></div>
+                    <form id="contactForm">
+                        <div class="input-group">
+                            <label for="contactName">Nama Lengkap</label>
+                            <input id="contactName" class="input-control" type="text" placeholder="Masukkan nama Anda...">
+                        </div>
+                        <div class="input-group">
+                            <label for="contactEmail">Email</label>
+                            <input id="contactEmail" class="input-control" type="email" placeholder="contoh@email.com">
+                        </div>
+                        <div class="input-group">
+                            <label for="contactMessage">Pesan</label>
+                            <textarea id="contactMessage" class="input-control" rows="6" placeholder="Tuliskan pesan Anda..."></textarea>
+                        </div>
+                        <button class="btn btn-accent btn-block" type="submit">Kirim Pesan</button>
+                    </form>
+                </section>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+    <script src="script.js"></script>
+</body>
+</html>

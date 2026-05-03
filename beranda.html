@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <title>Beranda - Nexora Mobility</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/beranda.css">
+</head>
+<body data-page="beranda">
+    <div id="navbar"></div>
+
+    <header class="hero-home">
+        <div class="container hero-wrap">
+            <div class="hero-banner">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80" alt="Hero rental kendaraan">
+                <div class="hero-floating-card">
+                    <span class="eyebrow">SEWA MOBIL & MOTOR</span>
+                    <h1>Sewa mobil & motor mudah di Palembang</h1>
+                    <p>Solusi transportasi cepat, aman, dan fleksibel untuk kebutuhan harian, bisnis, maupun perjalanan kampus.</p>
+                </div>
+            </div>
+            <div class="hero-search-panel card-surface">
+                <div class="search-grid">
+                    <div class="field-group">
+                        <label>Lokasi Penjemputan</label>
+                        <select id="searchPickup">
+                            <option>Palembang</option>
+                            <option>Kampus Unsri</option>
+                            <option>Bandara SMB II</option>
+                        </select>
+                    </div>
+                    <div class="field-group">
+                        <label>Jenis Kendaraan</label>
+                        <select id="searchType">
+                            <option value="all">Mobil / Motor</option>
+                            <option value="mobil">Mobil</option>
+                            <option value="motor">Motor</option>
+                        </select>
+                    </div>
+                    <div class="field-group">
+                        <label>Tanggal</label>
+                        <input type="date" id="searchDate">
+                    </div>
+                    <div class="field-group">
+                        <label>Durasi</label>
+                        <select id="searchDuration">
+                            <option>1 Hari</option>
+                            <option>2 Hari</option>
+                            <option>3 Hari</option>
+                            <option>1 Minggu</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-accent search-btn" id="searchNowBtn">Cari</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="home-listing section-space">
+            <div class="container listing-layout">
+                <aside class="filter-sidebar card-surface">
+                    <div class="section-mini-title">Filter</div>
+                    <div class="filter-group">
+                        <h4>Kategori Harga</h4>
+                        <label><input type="radio" name="budget" value="all" checked> Semua</label>
+                        <label><input type="radio" name="budget" value="low"> Rp 0 - 200rb</label>
+                        <label><input type="radio" name="budget" value="mid"> Rp 200rb - 500rb</label>
+                        <label><input type="radio" name="budget" value="high"> Rp 500rb+</label>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Tipe</h4>
+                        <label><input type="checkbox" name="vehicleType" value="mobil" checked> Mobil</label>
+                        <label><input type="checkbox" name="vehicleType" value="motor" checked> Motor</label>
+                    </div>
+                    <button type="button" id="resetHomeFilter" class="btn btn-outline btn-block">Reset Filter</button>
+                    <a href="./layanan.html" class="btn btn-primary btn-block">Lihat Semua Layanan</a>
+                </aside>
+                <section class="listing-main">
+                    <div class="section-header-row">
+                        <div>
+                            <div class="section-mini-title">Armada Favorit</div>
+                            <h2>Pilih kendaraan sesuai kebutuhan</h2>
+                        </div>
+                        <div class="sort-info" id="homeResultCount">0 kendaraan tersedia</div>
+                    </div>
+                    <div id="homePackages" class="package-grid"></div>
+                </section>
+            </div>
+        </section>
+
+        <section class="section-space">
+            <div class="container testimonial-strip card-surface">
+                <div>
+                    <span class="eyebrow">Tentang Kami</span>
+                    <h2>Pelopor solusi mobilitas modern di Palembang</h2>
+                    <p>Kami hadir untuk menyediakan akses rental kendaraan yang praktis, terpercaya, dan terjangkau dengan pengalaman pengguna yang sederhana namun profesional.</p>
+                </div>
+                <div class="stats-grid">
+                    <article>
+                        <strong>100%</strong>
+                        <span>Terpercaya & Cepat</span>
+                    </article>
+                    <article>
+                        <strong>24/7</strong>
+                        <span>Dukungan pelanggan</span>
+                    </article>
+                    <article>
+                        <strong>Real-Time</strong>
+                        <span>Tracking status</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+    <script>window.RENT_PACKAGES = [{"id": "alphard-premium", "name": "Toyota Alphard Premium", "type": "mobil", "category": "premium", "price": 950000, "duration": "24 jam", "transmission": "Automatic", "passenger": "6 penumpang", "fuel": "BBM tidak termasuk", "rating": "4.9", "badge": "Best Seller", "image": "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&q=80", "description": "Pilihan premium untuk acara keluarga, perjalanan bisnis, atau penjemputan tamu penting dengan kenyamanan maksimal.", "features": ["Driver profesional opsional", "Interior luas dan nyaman", "Cocok untuk city tour dan perjalanan formal"], "pickup": ["Pool Bukit Besar", "Bandara Sultan Mahmud Badaruddin II"]}, {"id": "avanza-city", "name": "Toyota Avanza", "type": "mobil", "category": "hemat", "price": 450000, "duration": "12 jam", "transmission": "Manual / AT", "passenger": "7 penumpang", "fuel": "BBM tidak termasuk", "rating": "4.8", "badge": "Populer", "image": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80", "description": "Mobil keluarga yang irit dan cocok untuk penggunaan harian, keperluan kampus, maupun perjalanan singkat di dalam kota.", "features": ["Harga terjangkau", "Bagasi cukup luas", "Nyaman untuk keluarga kecil"], "pickup": ["Pool Bukit Besar", "KM 5 Palembang"]}, {"id": "paket-keluarga", "name": "Paket Mobil Keluarga", "type": "mobil", "category": "keluarga", "price": 650000, "duration": "24 jam", "transmission": "Manual / Automatic", "passenger": "7 penumpang", "fuel": "BBM tidak termasuk", "rating": "4.9", "badge": "Keluarga", "image": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80", "description": "Paket mobil keluarga untuk liburan, acara keluarga, dan perjalanan bersama dengan kabin lega serta pilihan driver.", "features": ["Cocok untuk keluarga", "Kabin lega dan bagasi cukup", "Driver profesional opsional"], "pickup": ["Pool Bukit Besar", "Rumah pelanggan area Palembang"]}, {"id": "paket-city-tour", "name": "Paket Keliling Kota Palembang", "type": "mobil", "category": "city-tour", "price": 500000, "duration": "10 jam", "transmission": "Manual / Automatic", "passenger": "5-7 penumpang", "fuel": "BBM menyesuaikan rute", "rating": "4.8", "badge": "City Tour", "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80", "description": "Paket mobil untuk keliling kota Palembang, cocok untuk wisata Ampera, Jakabaring, kuliner, dan agenda singkat dalam kota.", "features": ["Rute dalam kota fleksibel", "Bisa dengan driver", "Cocok untuk wisata dan tamu luar kota"], "pickup": ["Jembatan Ampera", "Hotel area Palembang", "Bandara SMB II"]}, {"id": "innova-zenix", "name": "Innova Zenix", "type": "mobil", "category": "premium", "price": 850000, "duration": "24 jam", "transmission": "Automatic", "passenger": "7 penumpang", "fuel": "BBM tidak termasuk", "rating": "4.8", "badge": "Favorite", "image": "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=80", "description": "MPV modern dengan kenyamanan tinggi untuk wisata keluarga dan perjalanan antarkota.", "features": ["Kabin lega", "Performa halus", "Tampil modern dan elegan"], "pickup": ["Pool Bukit Besar", "Jakabaring Sport City"]}, {"id": "pcx-160", "name": "Honda PCX 160", "type": "motor", "category": "hemat", "price": 160000, "duration": "24 jam", "transmission": "Automatic", "passenger": "2 orang", "fuel": "Full tank awal", "rating": "4.7", "badge": "Hemat", "image": "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=80", "description": "Motor matic premium untuk mobilitas harian yang nyaman, hemat, dan stylish.", "features": ["Bagasi luas", "Posisi duduk nyaman", "Irit bahan bakar"], "pickup": ["Kampus Unsri Bukit Besar", "Pool Sukarami"]}, {"id": "vario-160", "name": "Honda Vario 160", "type": "motor", "category": "hemat", "price": 140000, "duration": "24 jam", "transmission": "Automatic", "passenger": "2 orang", "fuel": "Full tank awal", "rating": "4.6", "badge": "Praktis", "image": "assets/images/vario-160.jpg", "description": "Pilihan fleksibel untuk aktivitas kampus, kerja, dan perjalanan singkat di area Palembang.", "features": ["Mudah dikendarai", "Servis rutin", "Cocok untuk penggunaan harian"], "pickup": ["Kampus Unsri Indralaya", "Pool Bukit Besar"]}, {"id": "paket-mahasiswa", "name": "Paket Mahasiswa UNSRI", "type": "motor", "category": "paket", "price": 200000, "duration": "1 hari", "transmission": "Motor Matic", "passenger": "2 orang", "fuel": "Jas hujan + helm", "rating": "4.9", "badge": "Mahasiswa", "image": "https://images.unsplash.com/photo-1517846693594-1567da72af75?auto=format&fit=crop&w=1200&q=80", "description": "Paket hemat khusus mahasiswa untuk kebutuhan mobilitas kampus dengan fasilitas penting yang sudah disiapkan.", "features": ["2 helm SNI", "Jas hujan", "Harga hemat untuk mahasiswa"], "pickup": ["Kampus Unsri Indralaya", "Kampus Bukit Besar"]}];</script>
+    <script src="script.js"></script>
+</body>
+</html>
